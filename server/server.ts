@@ -5,9 +5,13 @@ import cors from 'cors'
 import corsOptions from './config/corsOptions'
 import cookieParser from 'cookie-parser'
 import { errorHandler, notFound } from './middlewares/error'
+import connectDB from './config/db'
+import { connection } from 'mongoose'
 
 const PORT = process.env.PORT || 5000
 const app = express()
+
+connectDB()
 
 // middlewares
 app.use(express.json())
@@ -25,4 +29,7 @@ app.get('/', (req, res, next) => {
 app.use(notFound)
 app.use(errorHandler)
 
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`))
+// Start listening after connecting to MongoDB
+connection.once('open', () => {
+  app.listen(PORT, () => console.log(`Server running on port ${PORT}`))
+})

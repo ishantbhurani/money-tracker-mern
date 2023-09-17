@@ -8,6 +8,7 @@ This is a fully responsive MERN stack app to track your money.
   - [Features](#features)
 - [My process](#my-process)
   - [Built with](#built-with)
+  - [Useful resources](#useful-resources)
 - [Author](#author)
 
 ## Overview
@@ -44,8 +45,17 @@ Users should be able to:
 
 - [Node.js](https://nodejs.org/) - JavaScript runtime environment
 - [Express](https://expressjs.com/) - Node.js web framework
+- [cors](https://github.com/expressjs/cors) - Node.js CORS middleware
+- [cookie-parser](https://github.com/expressjs/cookie-parser) - Parse HTTP request cookies
+- [MongoDB](https://www.mongodb.com/) - NoSQL Database
+- [Mongoose](https://mongoosejs.com/) - ODM library for MongoDB
 - [nodemon](https://nodemon.io/) - automatically restarts Node.js server when change detected
 - [ts-node](https://typestrong.org/ts-node/) - TypeScript execution engine for Node.js
+
+### Useful resources
+
+- [MERN Auth](https://github.com/bradtraversy/mern-auth) by [Brad Traversy](https://twitter.com/traversymedia)
+- [MERN Stack](https://github.com/gitdagray/mern_stack_course) by [Dave Gray](https://twitter.com/yesdavidgray)
 
 ## Author
 
