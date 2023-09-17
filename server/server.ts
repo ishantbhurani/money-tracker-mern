@@ -3,6 +3,7 @@ import { config } from 'dotenv'
 config()
 import cors from 'cors'
 import corsOptions from './config/corsOptions'
+import cookieParser from 'cookie-parser'
 
 const PORT = process.env.PORT || 5000
 const app = express()
@@ -11,6 +12,7 @@ const app = express()
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.use(cors(corsOptions))
+app.use(cookieParser())
 
 // basic logger middleware
 app.get('/', (req, res, next) => {
