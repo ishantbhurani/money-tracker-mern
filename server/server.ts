@@ -9,6 +9,7 @@ import connectDB from './config/db'
 import { connection } from 'mongoose'
 import authRoutes from './routes/auth'
 import transactionsRoutes from './routes/transactions'
+import { protect } from './middlewares/auth'
 
 const PORT = process.env.PORT || 5000
 const app = express()
@@ -29,7 +30,7 @@ app.get('/', (req, res, next) => {
 
 // Routes
 app.use('/api/auth', authRoutes)
-app.use('/api/transactions', transactionsRoutes)
+app.use('/api/transactions', protect, transactionsRoutes)
 
 // error middlewares
 app.use(notFound)
