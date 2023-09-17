@@ -8,6 +8,7 @@ import { errorHandler, notFound } from './middlewares/error'
 import connectDB from './config/db'
 import { connection } from 'mongoose'
 import authRoutes from './routes/auth'
+import transactionsRoutes from './routes/transactions'
 
 const PORT = process.env.PORT || 5000
 const app = express()
@@ -28,6 +29,7 @@ app.get('/', (req, res, next) => {
 
 // Routes
 app.use('/api/auth', authRoutes)
+app.use('/api/transactions', transactionsRoutes)
 
 // error middlewares
 app.use(notFound)
