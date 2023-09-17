@@ -3,3 +3,9 @@ interface UserType {
   email: string
   password: string
 }
+
+interface TransactionType {
+  title: string
+  description?: string
+  amount: Number
+}
