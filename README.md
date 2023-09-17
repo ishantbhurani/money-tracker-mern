@@ -52,6 +52,7 @@ Users should be able to:
 - [Mongoose](https://mongoosejs.com/) - ODM library for MongoDB
 - [bcrypt](https://github.com/kelektiv/node.bcrypt.js) - bcrypt (a password-hashing function) for Node.js
 - [express-async-handler](https://github.com/Abazhenov/express-async-handler) - Async Error Handling Middleware for Express
+- [jsonwebtoken](https://github.com/auth0/node-jsonwebtoken) - JSON Web Tokens implementation for Node.js
 - [nodemon](https://nodemon.io/) - automatically restarts Node.js server when change detected
 - [ts-node](https://typestrong.org/ts-node/) - TypeScript execution engine for Node.js
 

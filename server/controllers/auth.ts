@@ -1,6 +1,7 @@
 import type { Request, Response } from 'express'
 import asyncHandler from 'express-async-handler'
 import User from '../models/User'
+import generateToken from '../utils/generateToken'
 
 // @desc    Login existing user, set token
 // @route   POST /api/auth
@@ -16,7 +17,7 @@ export const login = asyncHandler(async (req: Request, res: Response) => {
   const foundUser = await User.findOne({ email }).exec()
 
   if (foundUser && (await foundUser.matchPassword(password))) {
-    // TODO: generate token, set cookie
+    generateToken(res, foundUser._id)
 
     res.json({
       id: foundUser._id,
@@ -54,7 +55,7 @@ export const register = asyncHandler(async (req: Request, res: Response) => {
     throw new Error('Invalid user data')
   }
 
-  // TODO: generate token, set cookie
+  generateToken(res, user._id)
 
   res.status(201).json({
     id: user._id,
@@ -67,6 +68,6 @@ export const register = asyncHandler(async (req: Request, res: Response) => {
 // @route   POST /api/auth/logout
 // @access  Public
 export const logout = (_req: Request, res: Response) => {
-  // TODO: clear cookie
+  res.cookie('jwt', '', { httpOnly: true, expires: new Date(0) })
   res.sendStatus(204)
 }
