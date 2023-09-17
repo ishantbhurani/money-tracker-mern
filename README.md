@@ -45,6 +45,7 @@ Users should be able to:
 
 - [Node.js](https://nodejs.org/) - JavaScript runtime environment
 - [Express](https://expressjs.com/) - Node.js web framework
+- [TypeScript](https://www.typescriptlang.org/) - Syntactic superset of JavaScript
 - [cors](https://github.com/expressjs/cors) - Node.js CORS middleware
 - [cookie-parser](https://github.com/expressjs/cookie-parser) - Parse HTTP request cookies
 - [MongoDB](https://www.mongodb.com/) - NoSQL Database
