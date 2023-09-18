@@ -40,6 +40,8 @@ Users should be able to:
 - [React](https://reactjs.org/) - JavaScript library
 - [TypeScript](https://www.typescriptlang.org/) - Syntactic superset of JavaScript
 - [Vite](https://vitejs.dev/) - Build tool, dev server
+- [React Redux](https://react-redux.js.org/) - Official React bindings for Redux (A predictable state management library)
+- [Redux Tookit](https://redux-toolkit.js.org/) - Official toolset for Redux development
 
 #### Backend
 
