@@ -11,7 +11,7 @@ export default function FAB({ openModal }: FABProps) {
         title='Add'
         onClick={openModal}
         aria-label='Add a new transaction'
-        className='flex h-10 w-10 items-center justify-center rounded-full bg-indigo-600 p-0 text-2xl text-white shadow outline-none transition duration-200 ease-in hover:animate-bounce hover:bg-indigo-700 focus:animate-bounce focus:bg-indigo-700 active:shadow-lg sm:h-12 sm:w-12'
+        className='flex h-10 w-10 items-center justify-center rounded-full bg-indigo-600 p-0 text-2xl text-white shadow outline-none transition duration-200 ease-in hover:animate-bounce hover:bg-indigo-700 focus-visible:animate-bounce focus-visible:bg-indigo-700 active:shadow-lg sm:h-12 sm:w-12'
       >
         <AiOutlinePlus />
       </button>
