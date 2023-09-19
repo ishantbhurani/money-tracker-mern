@@ -50,7 +50,7 @@ export default function TransactionsList({ openModal }: TransactionsListProps) {
 
     if (ids.length) {
       const tableContent = ids.map(id => (
-        <TransactionItem key={id} transactionId={id} />
+        <TransactionItem key={id} transactionId={id} openModal={openModal} />
       ))
 
       content = (

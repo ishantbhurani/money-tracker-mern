@@ -9,10 +9,12 @@ import { AiFillDelete, AiFillEdit } from 'react-icons/ai'
 
 type TransactionItemProps = {
   transactionId: EntityId
+  openModal: (id?: string) => void
 }
 
 export default memo(function TransactionItem({
   transactionId,
+  openModal,
 }: TransactionItemProps) {
   const { transaction } = useGetTransactionsQuery(undefined, {
     selectFromResult: ({ data }) => ({
@@ -66,6 +68,7 @@ export default memo(function TransactionItem({
         <td className=' space-x-2 py-4 sm:space-x-4'>
           <button
             title='Edit'
+            onClick={() => openModal(transaction.id)}
             aria-label={`Edit transaction ${'title'}`}
             className='text-2xl text-indigo-300 outline-none hover:text-indigo-500 focus-visible:text-indigo-500'
           >

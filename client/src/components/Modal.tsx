@@ -1,19 +1,32 @@
 import { useEffect, useState } from 'react'
-import { useAddNewTransactionMutation } from '../features/transactions/transactionsApiSlice'
+import {
+  useAddNewTransactionMutation,
+  useGetTransactionsQuery,
+  useUpdateTransactionMutation,
+} from '../features/transactions/transactionsApiSlice'
 import { isErrorWithMessage, isFetchBaseQueryError } from '../app/api/helpers'
 import { AiOutlineClose } from 'react-icons/ai'
 
 type ModalProps = {
+  editId?: string
   closeModal: () => void
 }
 
-export default function Modal({ closeModal }: ModalProps) {
-  const [title, setTitle] = useState('')
-  const [description, setDescription] = useState('')
-  const [amount, setAmount] = useState(0)
+export default function Modal({ closeModal, editId }: ModalProps) {
+  const { transaction } = useGetTransactionsQuery(undefined, {
+    selectFromResult: ({ data }) => ({
+      transaction: editId ? data?.entities[editId] : null,
+    }),
+  })
+
+  const [title, setTitle] = useState(transaction?.title ?? '')
+  const [description, setDescription] = useState(transaction?.description || '')
+  const [amount, setAmount] = useState(transaction?.amount ?? 0)
   const [error, setError] = useState('')
 
   const [addNewTransaction, { isLoading }] = useAddNewTransactionMutation()
+  const [updateTransaction, { isLoading: isUpdateLoading }] =
+    useUpdateTransactionMutation()
 
   useEffect(() => {
     setError('')
@@ -23,11 +36,20 @@ export default function Modal({ closeModal }: ModalProps) {
     e.preventDefault()
 
     try {
-      await addNewTransaction({
-        title,
-        description,
-        amount,
-      }).unwrap()
+      if (transaction) {
+        await updateTransaction({
+          ...transaction,
+          title,
+          description,
+          amount,
+        }).unwrap()
+      } else {
+        await addNewTransaction({
+          title,
+          description,
+          amount,
+        }).unwrap()
+      }
 
       setTitle('')
       setDescription('')
@@ -53,7 +75,7 @@ export default function Modal({ closeModal }: ModalProps) {
           <div className='space-y-4 p-6 sm:p-8 md:space-y-6'>
             <div className='flex items-center justify-between'>
               <h1 className='text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl'>
-                Add a new transaction
+                {transaction ? 'Update transaction' : 'Add a new transaction'}
               </h1>
               <button
                 onClick={closeModal}
@@ -113,11 +135,13 @@ export default function Modal({ closeModal }: ModalProps) {
 
               <button
                 type='submit'
-                aria-label='Add a new transaction'
-                disabled={isLoading}
+                aria-label={
+                  transaction ? 'Update transaction' : 'Add a new transaction'
+                }
+                disabled={isLoading || isUpdateLoading}
                 className='w-full rounded-lg bg-indigo-600 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-4 focus:ring-indigo-300'
               >
-                Add
+                {transaction ? 'Update' : 'Add'}
               </button>
             </form>
           </div>

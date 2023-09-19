@@ -5,8 +5,10 @@ import Modal from './components/Modal'
 
 export default function App() {
   const [isModalOpen, setIsModalOpen] = useState(false)
+  const [editId, setEditId] = useState<string>()
 
-  const openModal = () => {
+  const openModal = (id?: string) => {
+    setEditId(id)
     setIsModalOpen(true)
   }
 
@@ -18,7 +20,7 @@ export default function App() {
     <div className='container mx-auto flex-1'>
       <TransactionsList openModal={openModal} />
       <FAB openModal={openModal} />
-      {isModalOpen && <Modal closeModal={closeModal} />}
+      {isModalOpen && <Modal editId={editId} closeModal={closeModal} />}
     </div>
   )
 }
