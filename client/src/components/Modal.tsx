@@ -57,7 +57,7 @@ export default function Modal({ closeModal }: ModalProps) {
               </h1>
               <button
                 onClick={closeModal}
-                className='text-red-300 transition hover:text-red-500'
+                className='text-2xl text-red-300 transition hover:text-red-500'
               >
                 <AiOutlineClose />
               </button>
