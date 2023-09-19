@@ -4,9 +4,10 @@ import { Provider } from 'react-redux'
 import store from './app/store.ts'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import Root from './components/Root.tsx'
-import App from './App.tsx'
-import './index.css'
 import ErrorPage from './components/ErrorPage.tsx'
+import App from './App.tsx'
+import RegisterPage from './features/auth/RegisterPage.tsx'
+import './index.css'
 
 const router = createBrowserRouter([
   {
@@ -21,6 +22,7 @@ const router = createBrowserRouter([
             index: true,
             element: <App />,
           },
+          { path: 'register', element: <RegisterPage /> },
         ],
       },
     ],
