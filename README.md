@@ -40,6 +40,8 @@ Users should be able to:
 - [React](https://reactjs.org/) - JavaScript library
 - [TypeScript](https://www.typescriptlang.org/) - Syntactic superset of JavaScript
 - [Vite](https://vitejs.dev/) - Build tool, dev server
+- [Tailwind CSS](https://tailwindcss.com/) - CSS framework
+- [prettier-plugin-tailwindcss](https://tailwindcss.com/blog/automatic-class-sorting-with-prettier) - Automatic Tailwind CSS class sorting with Prettier
 - [React Router](https://reactrouter.com/) - Routing for React
 - [React Redux](https://react-redux.js.org/) - Official React bindings for Redux (A predictable state management library)
 - [Redux Toolkit](https://redux-toolkit.js.org/) - Official toolset for Redux development
