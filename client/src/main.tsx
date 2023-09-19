@@ -6,15 +6,22 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import Root from './components/Root.tsx'
 import App from './App.tsx'
 import './index.css'
+import ErrorPage from './components/ErrorPage.tsx'
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <Root />,
+    errorElement: <ErrorPage />,
     children: [
       {
-        index: true,
-        element: <App />,
+        errorElement: <ErrorPage />,
+        children: [
+          {
+            index: true,
+            element: <App />,
+          },
+        ],
       },
     ],
   },
