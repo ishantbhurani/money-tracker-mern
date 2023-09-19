@@ -46,6 +46,8 @@ Users should be able to:
 - [React Redux](https://react-redux.js.org/) - Official React bindings for Redux (A predictable state management library)
 - [Redux Toolkit](https://redux-toolkit.js.org/) - Official toolset for Redux development
 - [RTK Query](https://redux-toolkit.js.org/rtk-query/overview) - Powerful data fetching and caching tool included in the Redux Toolkit
+- [clsx](https://github.com/lukeed/clsx) - utility for constructing `className` strings conditionally
+- [tailwind-merge](https://github.com/dcastil/tailwind-merge) - Merge Tailwind CSS classes without style conflicts
 
 #### Backend
 
