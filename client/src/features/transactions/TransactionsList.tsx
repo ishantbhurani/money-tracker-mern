@@ -2,6 +2,7 @@ import {
   isErrorWithMessage,
   isFetchBaseQueryError,
 } from '../../app/api/helpers'
+import TransactionItem from './TransactionItem'
 import { useGetTransactionsQuery } from './transactionsApiSlice'
 
 export default function TransactionsList() {
@@ -41,16 +42,39 @@ export default function TransactionsList() {
   }
 
   if (isSuccess) {
-    const { ids, entities } = transactions
+    const { ids } = transactions
+
     if (ids.length) {
+      const tableContent = ids.map(id => (
+        <TransactionItem key={id} transactionId={id} />
+      ))
+
       content = (
-        <div>
-          <ul>
-            {ids.map(id => (
-              <li key={id}>{entities[id]?.title}</li>
-            ))}
-          </ul>
-        </div>
+        <table className='w-full text-left text-sm text-gray-500 md:text-base'>
+          <thead className='bg-indigo-50 text-xs uppercase text-gray-700 md:text-sm'>
+            <tr className='grid grid-cols-5 gap-4 text-center sm:grid-cols-6'>
+              <th scope='col' className='py-3'>
+                Date
+              </th>
+              <th scope='col' className='py-3'>
+                Title
+              </th>
+              <th scope='col' className='hidden py-3 sm:block'>
+                Details
+              </th>
+              <th scope='col' className='py-3'>
+                Amount
+              </th>
+              <th scope='col' className='py-3'>
+                Balance
+              </th>
+              <th scope='col' className='py-3'>
+                Actions
+              </th>
+            </tr>
+          </thead>
+          <tbody>{tableContent}</tbody>
+        </table>
       )
     } else {
       content = (
