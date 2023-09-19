@@ -5,7 +5,11 @@ import {
 import TransactionItem from './TransactionItem'
 import { useGetTransactionsQuery } from './transactionsApiSlice'
 
-export default function TransactionsList() {
+type TransactionsListProps = {
+  openModal: () => void
+}
+
+export default function TransactionsList({ openModal }: TransactionsListProps) {
   const {
     data: transactions,
     isLoading,
@@ -80,7 +84,10 @@ export default function TransactionsList() {
       content = (
         <div className='flex flex-col items-center gap-8 text-center'>
           <h1 className='text-2xl font-bold text-gray-700'>Nothing to show</h1>
-          <button className='rounded-lg border bg-indigo-600 p-3 text-white hover:bg-indigo-700 focus:outline-none focus-visible:bg-indigo-700'>
+          <button
+            onClick={openModal}
+            className='rounded-lg border bg-indigo-600 p-3 text-white hover:bg-indigo-700 focus:outline-none focus-visible:bg-indigo-700'
+          >
             Add a new transaction
           </button>
         </div>
