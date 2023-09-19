@@ -9,6 +9,7 @@ import App from './App.tsx'
 import LoginPage from './features/auth/LoginPage.tsx'
 import RegisterPage from './features/auth/RegisterPage.tsx'
 import './index.css'
+import PrivateRoute from './components/PrivateRoute.tsx'
 
 const router = createBrowserRouter([
   {
@@ -20,11 +21,22 @@ const router = createBrowserRouter([
         errorElement: <ErrorPage />,
         children: [
           {
-            index: true,
-            element: <App />,
+            element: <PrivateRoute />,
+            children: [
+              {
+                index: true,
+                element: <App />,
+              },
+            ],
           },
-          { path: 'login', element: <LoginPage /> },
-          { path: 'register', element: <RegisterPage /> },
+          {
+            path: 'login',
+            element: <LoginPage />,
+          },
+          {
+            path: 'register',
+            element: <RegisterPage />,
+          },
         ],
       },
     ],
