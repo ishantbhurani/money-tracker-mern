@@ -18,19 +18,19 @@ This is a fully responsive MERN stack app to track your money.
 ### Screenshots
 
 <kbd>
-  <img src="https://money-tracker-client.netlify.app/screenshots/login.png" alt='Login page'>
+  <img src="./screenshots/login.png" alt='Login page'>
 </kbd>
 
 <kbd>
-  <img src="https://money-tracker-client.netlify.app/screenshots/register.png" alt='Register new user'>
+  <img src="./screenshots/register.png" alt='Register new user'>
 </kbd>
 
 <kbd>
-  <img src="https://money-tracker-client.netlify.app/screenshots/desktop-transactions.png" alt='Transactions (Desktop)'>
+  <img src="./screenshots/desktop-transactions.png" alt='Transactions (Desktop)'>
 </kbd>
 
 <kbd>
-  <img src="https://money-tracker-client.netlify.app/screenshots/mobile-transactions.png" alt='Transactions (Mobile)'>
+  <img src="./screenshots/mobile-transactions.png" alt='Transactions (Mobile)'>
 </kbd>
 
 ### Links
