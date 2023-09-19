@@ -48,6 +48,7 @@ Users should be able to:
 - [RTK Query](https://redux-toolkit.js.org/rtk-query/overview) - Powerful data fetching and caching tool included in the Redux Toolkit
 - [clsx](https://github.com/lukeed/clsx) - utility for constructing `className` strings conditionally
 - [tailwind-merge](https://github.com/dcastil/tailwind-merge) - Merge Tailwind CSS classes without style conflicts
+- [react-icons](https://react-icons.github.io/react-icons) - Library to include popular icons in React
 
 #### Backend
 

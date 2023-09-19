@@ -1,4 +1,5 @@
-import { isRouteErrorResponse, useRouteError } from 'react-router-dom'
+import { Link, isRouteErrorResponse, useRouteError } from 'react-router-dom'
+import { AiFillHome } from 'react-icons/ai'
 
 export default function ErrorPage() {
   const error = useRouteError()
@@ -16,9 +17,13 @@ export default function ErrorPage() {
             (error as Error).message}
         </i>
       </p>
-      <button className='mt-4 rounded border border-indigo-600 px-2 py-1.5 text-indigo-600 outline-none hover:bg-indigo-600 hover:text-white focus-visible:bg-indigo-600 focus-visible:text-white sm:p-2'>
+      <Link
+        to='/'
+        className='mt-4 flex items-center justify-center gap-2 rounded border border-indigo-600 px-2 py-1.5 text-indigo-600 outline-none hover:bg-indigo-600 hover:text-white focus-visible:bg-indigo-600 focus-visible:text-white sm:p-2'
+      >
+        <AiFillHome className='text-xl' />
         Go Home
-      </button>
+      </Link>
     </div>
   )
 }
