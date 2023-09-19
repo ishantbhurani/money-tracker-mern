@@ -6,6 +6,7 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import Root from './components/Root.tsx'
 import ErrorPage from './components/ErrorPage.tsx'
 import App from './App.tsx'
+import LoginPage from './features/auth/LoginPage.tsx'
 import RegisterPage from './features/auth/RegisterPage.tsx'
 import './index.css'
 
@@ -22,6 +23,7 @@ const router = createBrowserRouter([
             index: true,
             element: <App />,
           },
+          { path: 'login', element: <LoginPage /> },
           { path: 'register', element: <RegisterPage /> },
         ],
       },
