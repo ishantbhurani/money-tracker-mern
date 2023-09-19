@@ -67,7 +67,7 @@ export default memo(function TransactionItem({
           <button
             title='Edit'
             aria-label={`Edit transaction ${'title'}`}
-            className='text-2xl text-indigo-300 hover:text-indigo-500'
+            className='text-2xl text-indigo-300 outline-none hover:text-indigo-500 focus-visible:text-indigo-500'
           >
             <AiFillEdit />
           </button>
@@ -76,7 +76,7 @@ export default memo(function TransactionItem({
             aria-label={`Delete transaction ${'title'}`}
             onClick={handleDelete}
             disabled={isDelLoading}
-            className='text-2xl text-red-300 hover:text-red-500'
+            className='text-2xl text-red-300 outline-none hover:text-red-500 focus-visible:text-red-500'
           >
             <AiFillDelete />
           </button>
