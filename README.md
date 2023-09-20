@@ -1,6 +1,6 @@
-# Money Tracker (in progress)
+# Money Tracker
 
-This is a fully responsive MERN stack app to track your money.
+This is a fully responsive MERN stack app to track your daily expenses. It supports email and password based authentication. It's built with React, Node.js, Express, MongoDB, TypeScript, and Redux, to name a few.
 
 ## Table of contents
 
