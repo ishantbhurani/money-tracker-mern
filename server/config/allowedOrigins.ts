@@ -1,3 +1,3 @@
-const allowedOrigins = ['https://money-tracker-client.netlify.app']
+const allowedOrigins = [process.env.CLIENT_URI]
 
 export default allowedOrigins

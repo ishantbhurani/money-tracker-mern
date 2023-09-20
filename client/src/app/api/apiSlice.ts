@@ -3,7 +3,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/dist/query/react'
 const apiSlice = createApi({
   reducerPath: 'api',
   baseQuery: fetchBaseQuery({
-    baseUrl: 'https://money-tracker-api-jkxz.onrender.com',
+    baseUrl: import.meta.env.VITE_API_BASE_URL,
     credentials: 'include',
   }),
   tagTypes: ['Transaction'],
