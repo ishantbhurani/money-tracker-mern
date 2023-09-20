@@ -2,6 +2,7 @@ import {
   isErrorWithMessage,
   isFetchBaseQueryError,
 } from '../../app/api/helpers'
+import Loading from '../../components/Loading'
 import TransactionItem from './TransactionItem'
 import { useGetTransactionsQuery } from './transactionsApiSlice'
 
@@ -21,7 +22,7 @@ export default function TransactionsList({ openModal }: TransactionsListProps) {
   let content
 
   if (isLoading) {
-    content = <h1>Loading</h1>
+    content = <Loading />
   }
 
   if (isError) {
