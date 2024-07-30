@@ -18,19 +18,19 @@ This is a fully responsive MERN stack app to track your daily expenses. It suppo
 ### Screenshots
 
 <kbd>
-  <img src="https://ishantbhurani.github.io/money-tracker-mern/screenshots/login.png" alt='Login page'>
+  <img src="./screenshots/login.png" alt='Login page'>
 </kbd>
 
 <kbd>
-  <img src="https://ishantbhurani.github.io/money-tracker-mern/screenshots/register.png" alt='Register new user'>
+  <img src="./screenshots/register.png" alt='Register new user'>
 </kbd>
 
 <kbd>
-  <img src="https://ishantbhurani.github.io/money-tracker-mern/screenshots/desktop-transactions.png" alt='Transactions (Desktop)'>
+  <img src="./screenshots/desktop-transactions.png" alt='Transactions (Desktop)'>
 </kbd>
 
 <kbd>
-  <img src="https://ishantbhurani.github.io/money-tracker-mern/screenshots/mobile-transactions.png" alt='Transactions (Mobile)'>
+  <img src="./screenshots/mobile-transactions.png" alt='Transactions (Mobile)'>
 </kbd>
 
 ### Links
